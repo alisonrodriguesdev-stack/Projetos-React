@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { PaginaAtiva } from './types';
 import { Sidebar } from './components/Sidebar';
 import { Navbar } from './components/Navbar';
+import {Vendas} from './pages/Vendas';
 import './custom.scss';
 
-function App() {
+function App() { 
   const [paginaAtiva, setPaginaAtiva] = useState<PaginaAtiva>('vendas');
 
   // Função que decide qual página renderizar na tela central
   const renderizarPagina = () => {
     switch (paginaAtiva) {
       case 'vendas':
-        return <div className="p-4"><h2>🛒 Tela de Vendas (PDV)</h2><p>O coração do sistema vai nascer aqui na Etapa 2.</p></div>;
+        return <Vendas />;
       case 'estoque':
         return <div className="p-4"><h2>📦 Painel de Estoque</h2><p>Aqui controlaremos as quantidades e alertas de estoque baixo.</p></div>;
       case 'cadastro':
